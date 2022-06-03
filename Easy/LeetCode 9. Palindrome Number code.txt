@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        int digit, rev=0;
+        
+        //value of x stoared into temp variable
+        int temp = x;
+        
+        //logic to reverse a number
+        while(x>0){
+            digit = x%10;
+            rev = rev*10 + digit;
+            x = x/10;
+        }
+        
+           //returns true if reverse number is equal to original number
+           return rev==temp;
+
+        
+    }
+    
+}
