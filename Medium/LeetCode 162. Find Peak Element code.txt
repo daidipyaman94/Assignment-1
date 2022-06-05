@@ -3,7 +3,7 @@ class Solution {
         
         int index = 0;
         
-        // logic for array length = 0/1/2/3/GreaterThan3
+        // logic for array length = 0/1/2/GreaterThan2
         
         if(nums.length == 0)
             index=0;
@@ -13,23 +13,8 @@ class Solution {
     
         if(nums.length == 2)
             index = nums[0]>nums[1] ? 0 : 1;
-        
-        if(nums.length == 3){
-            
-            //first element is compared with second element
-            if(nums[0]>nums[1])
-                index=0;
-            
-            //second element is compared with first and third element
-            if(nums[1]>nums[0] && nums[1]>nums[2])
-                index=1;
-            
-            //third element is compared with second element
-            if(nums[2]>nums[1])
-                index=2;
-        }
-        
-        if(nums.length>3)
+    
+        if(nums.length>2)
             {
              for(int i=0; i<nums.length; i++){
                  
