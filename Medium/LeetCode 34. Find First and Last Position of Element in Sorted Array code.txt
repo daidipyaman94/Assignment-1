@@ -1,0 +1,39 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        
+        // min value and max values are assigned as integer max and -1 respectively
+        int min =Integer.MAX_VALUE, max=-1;
+        
+        //output array of length 2 is created
+        int[] output = new int[2]; 
+        
+        for(int i=0; i<nums.length; i++){
+            
+            if(nums[i] == target){
+                //if ith index value is equal to target and index is less than min value,
+                //then set min value as i
+                if(i<min)
+                    min = i;
+                
+                 //if ith index value is equal to target and index is greater than max value,
+                //then set max value as i
+                if(i>max)
+                    max=i;
+            }
+        }
+        
+        //if we do not find target, then output is [-1,-1]
+        if(min>nums.length && max<0){
+            output[0] = -1;
+            output[1] = -1;
+        }
+        
+        //else output is [min, max]
+        else{
+            output[0] = min;
+            output[1] = max;
+        }
+        
+        return output;
+    }
+}
